@@ -1,4 +1,4 @@
-;;; calfw.el --- Calendar view framework on Emacs
+;;; calfw.el --- Calendar view framework on Emacs --- -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2011,2012,2013,2014,2015  SAKURAI Masashi
 
@@ -1513,7 +1513,7 @@ PREV-CMD and NEXT-CMD are the moving view command, such as `cfw:navi-previous(ne
         for endp   = (equal date end)
         for width  = (- cell-width (if beginp 1 0) (if endp 1 0))
         for title  = (cfw:render-periods-title
-                      date week-day begin end content cell-width)
+                      date week-day begin end content cell-width width)
         collect
         (apply 'propertize
                (concat (when beginp cfw:fstring-period-start)
@@ -1524,7 +1524,7 @@ PREV-CMD and NEXT-CMD are the moving view command, such as `cfw:navi-previous(ne
                'cfw:period t
                props)))
 
-(defun cfw:render-periods-title (date week-day begin end content cell-width)
+(defun cfw:render-periods-title (date week-day begin end content cell-width width)
   "[internal] Return a title string."
   (let* ((week-begin (cfw:date-after date (- week-day)))
          (month-begin (cfw:date
