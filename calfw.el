@@ -1847,6 +1847,9 @@ where `event-fun' is applied if the element is a `cfw:event'."
         (setq day (% (1+ day) cfw:week-days))
         (setq i (cfw:date-after i 1))))
 
+(defvar displayed-month)
+(defvar displayed-year)
+
 (defun cfw:view-model-make-holidays (date)
   "[internal] Return an alist of holidays around DATE."
   (if cfw:display-calendar-holidays
