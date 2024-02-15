@@ -1,4 +1,4 @@
-;;; calfw-org.el --- calendar view for org-agenda     -*- coding: utf-8 -*-
+;;; calfw-org.el --- calendar view for org-agenda   -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2011  SAKURAI Masashi
 
@@ -391,7 +391,7 @@ TEXT1 < TEXT2. This function makes no-time items in front of timed-items."
 
 (defun cfw:org-create-file-source (name file color)
   "Create org-element based source. "
-  (lexical-let ((file file))
+  (let ((file file))
     (make-cfw:source
      :name (concat "Org:" name)
      :color color

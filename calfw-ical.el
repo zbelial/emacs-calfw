@@ -1,4 +1,4 @@
-;;; calfw-ical.el --- calendar view for ical format
+;;; calfw-ical.el --- calendar view for ical format -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2011  SAKURAI Masashi
 
@@ -260,7 +260,7 @@ events have not been supported yet."
         collect event))
 
 (defun cfw:ical-create-source (name url color)
-  (lexical-let ((url url))
+  (let ((url url))
     (make-cfw:source
      :name (concat "iCal:" name)
      :color color

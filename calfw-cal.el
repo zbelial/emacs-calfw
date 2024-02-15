@@ -1,4 +1,4 @@
-;;; calfw-cal.el --- calendar view for emacs diary
+;;; calfw-cal.el --- calendar view for emacs diary -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2011  SAKURAI Masashi
 
